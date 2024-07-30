@@ -169,12 +169,12 @@ int installWad(const char *path)
 		contentMap_buf = fsop_ReadFile(fmt("%s/shared1/content.map", EmuNAND), &contentMap_size);
 		if(contentMap_buf == NULL)
 		{
-			printf("No content.map found!\n");
+			gprintf("No content.map found!\n");
 			return -7;
 		}
 		else if(contentMap_size % sizeof(contentMapEntry) != 0)
 		{
-			printf("content.map size is invalid!\n");
+			gprintf("content.map size is invalid!\n");
 			MEM2_free(contentMap_buf);
 			return -8;
 		}
